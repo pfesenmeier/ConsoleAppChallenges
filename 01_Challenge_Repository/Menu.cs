@@ -14,11 +14,11 @@ namespace _01_Challenge_Repository
         }
         public Menu(int mealNumber, string mealName, string mealDescription, string mealIngredients, float mealPrice)
         {
-            var MealNumber = mealNumber;
-            var MealName = mealName;
-            var MealDescription = mealDescription;
-            var MealIngredients = mealIngredients;
-            var MealPrice = mealPrice;
+            MealNumber = mealNumber;
+            MealName = mealName;
+            MealDescription = mealDescription;
+            MealIngredients = mealIngredients;
+            MealPrice = mealPrice;
         }
         public int MealNumber { get; set; }
         public string MealName { get; set; }

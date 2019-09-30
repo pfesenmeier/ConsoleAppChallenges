@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_Challenge_Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,76 @@ namespace _01_Challenge_Console
 {
     class ProgramUI
     {
+        public void Run()
+        {
+            MenuRepository menuRepo = new MenuRepository();
+            while (true)
+            {
+                switch (RunMenu())
+                {
+                    case 1:
+                        PrintMenu(menuRepo);
+                        break;
+                    case 2:
+                        AddItem(menuRepo);
+                        break;
+                    case 3:
+                        DeleteItem(menuRepo);
+                        break;
+                }
+            }
+            //create
+            //delete
+            //list
+        }
+        public void AddItem(MenuRepository menuRepo)
+        {
+            Console.Out.NewLine = "";
+            Console.WriteLine("Number: ");
+            int menuNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Name: ");
+            string menuName = Console.ReadLine();
+            Console.WriteLine("Ingredients: ");
+            string menuIngredients = Console.ReadLine();
+            Console.WriteLine("Price: ");
+            float menuPrice = float.Parse(Console.ReadLine());
+            Console.WriteLine("Description: ");
+            string menuDescription = Console.ReadLine();
+            Menu menu = new Menu(menuNumber, menuName, menuDescription, menuIngredients, menuPrice);
+            menuRepo.AddMenu(menu);
+        }
+        public void PrintMenu(MenuRepository menuRepo)
+        {
+            foreach (Menu menu in menuRepo.ListMenu())
+            {
+                Console.WriteLine($"{menu.MealNumber}\n{menu.MealName}\n{menu.MealDescription}\n{menu.MealIngredients}\n{menu.MealPrice}");
+            }
+        }
+        public int RunMenu()
+        {
+            //commands
+            Console.Out.NewLine = "";
+            Console.WriteLine("Komodo Cafe\n" +
+
+                "1. See Items\n" +
+                "2. Add Item\n" +
+                "3. Delete Item\n" +
+                "> ");
+            Console.Out.NewLine = null;
+            return int.Parse(Console.ReadLine());
+
+        }
+        public void DeleteItem(MenuRepository menuRepo)
+        {
+            Console.Out.NewLine = "";
+            Console.WriteLine("Item Number: ");
+            Console.Out.NewLine = null;
+            int input = int.Parse(Console.ReadLine());
+            menuRepo.DeleteMenu(menuRepo.ListMenu().Find(item => item.MealNumber == input));
+            //foreach (Menu menu in menuRepo)
+            //{
+            //    if (menu.MealNumber == input) { menuRepo.DeleteMenu(menu); }
+            //}
+        }
     }
 }

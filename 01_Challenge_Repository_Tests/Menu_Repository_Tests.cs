@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _01_Challenge_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -63,6 +64,19 @@ namespace _01_Challenge_Repository_Tests
         {
             MenuRepo.DeleteMenu(menu2);
             Assert.AreEqual(2, MenuRepo.ListMenu().Count);
+        }
+        [TestMethod]
+        public void ListMenuTest()
+        {
+            MenuRepo.ListMenu();
+            Assert.AreEqual(3, MenuRepo.ListMenu().Count);
+            List<Menu> menuList = new List<Menu>()
+            {
+                menu0,
+                menu1,
+                menu2
+            };
+            Assert.AreEqual(menuList.Count, MenuRepo.ListMenu().Count);
         }
     }
 }
