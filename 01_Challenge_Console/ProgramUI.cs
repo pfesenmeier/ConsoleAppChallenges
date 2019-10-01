@@ -14,7 +14,10 @@ namespace _01_Challenge_Console
             MenuRepository menuRepo = new MenuRepository();
             while (true)
             {
-                switch (RunMenu())
+                Console.Clear();
+                int input = RunMenu();
+                Console.Clear();
+                switch (input)
                 {
                     case 1:
                         PrintMenu(menuRepo);
@@ -26,10 +29,8 @@ namespace _01_Challenge_Console
                         DeleteItem(menuRepo);
                         break;
                 }
+                Console.ReadLine();
             }
-            //create
-            //delete
-            //list
         }
         public void AddItem(MenuRepository menuRepo)
         {
@@ -40,30 +41,39 @@ namespace _01_Challenge_Console
             string menuName = Console.ReadLine();
             Console.WriteLine("Ingredients: ");
             string menuIngredients = Console.ReadLine();
-            Console.WriteLine("Price: ");
+            Console.WriteLine("Price : $");
             float menuPrice = float.Parse(Console.ReadLine());
             Console.WriteLine("Description: ");
             string menuDescription = Console.ReadLine();
-            Menu menu = new Menu(menuNumber, menuName, menuDescription, menuIngredients, menuPrice);
+            Menu menu = new Menu(menuNumber, 
+                                 menuName, 
+                                 menuDescription, 
+                                 menuIngredients, 
+                                 menuPrice);
             menuRepo.AddMenu(menu);
+            Console.WriteLine("\nSuccess");
         }
         public void PrintMenu(MenuRepository menuRepo)
         {
-            foreach (Menu menu in menuRepo.ListMenu())
+            foreach (Menu menu in menuRepo.MenuRepo)
             {
-                Console.WriteLine($"{menu.MealNumber}\n{menu.MealName}\n{menu.MealDescription}\n{menu.MealIngredients}\n{menu.MealPrice}");
+                Console.WriteLine($"{menu.MealNumber}\n" +
+                                  $"{menu.MealName}\n" +
+                                  $"{menu.MealDescription}\n" +
+                                  $"{menu.MealIngredients}\n" +
+                                  $"{menu.MealPrice}");
+                Console.WriteLine();
             }
         }
         public int RunMenu()
         {
             //commands
             Console.Out.NewLine = "";
-            Console.WriteLine("Komodo Cafe\n" +
-
-                "1. See Items\n" +
-                "2. Add Item\n" +
-                "3. Delete Item\n" +
-                "> ");
+            Console.WriteLine("Komodo Cafe\n\n" +
+                              "1. See Items\n" +
+                              "2. Add Item\n" +
+                              "3. Delete Item\n" +
+                              "> ");
             Console.Out.NewLine = null;
             return int.Parse(Console.ReadLine());
 
@@ -74,11 +84,8 @@ namespace _01_Challenge_Console
             Console.WriteLine("Item Number: ");
             Console.Out.NewLine = null;
             int input = int.Parse(Console.ReadLine());
-            menuRepo.DeleteMenu(menuRepo.ListMenu().Find(item => item.MealNumber == input));
-            //foreach (Menu menu in menuRepo)
-            //{
-            //    if (menu.MealNumber == input) { menuRepo.DeleteMenu(menu); }
-            //}
+            bool success = menuRepo.DeleteMenu(input);
+            if (success) { Console.WriteLine("Success"); }
         }
     }
 }

@@ -104,7 +104,8 @@ namespace _07_Challenge_Console
                               $"{String.Concat(Enumerable.Repeat(' ', 24 - "Disposables".ToString().Length))}" +
                               $"{DisposableCost.ToString("C", new System.Globalization.CultureInfo("en-US"))}\n");
             Console.WriteLine($"Total" +
-                              $"{String.Concat(Enumerable.Repeat(' ', 16 - "Total".ToString().Length))}{repository.TotalTickets()}\t" +
+                              $"{String.Concat(Enumerable.Repeat(' ', 16 - "Total".ToString().Length))}" +
+                              $"{repository.TotalTickets()}\t" +
                               $"{TotalCost.ToString("C", new System.Globalization.CultureInfo("en-US"))}");
             while (true)
             {

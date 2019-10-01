@@ -57,26 +57,25 @@ namespace _01_Challenge_Repository_Tests
                 MealPrice = 2.00f
             };
             MenuRepo.AddMenu(menu3);
-            Assert.AreEqual(4, MenuRepo.ListMenu().Count);
+            Assert.AreEqual(4, MenuRepo.MenuRepo.Count);
         }
         [TestMethod]
         public void DeleteMenuTest()
         {
             MenuRepo.DeleteMenu(menu2);
-            Assert.AreEqual(2, MenuRepo.ListMenu().Count);
+            Assert.AreEqual(2, MenuRepo.MenuRepo.Count);
         }
         [TestMethod]
         public void ListMenuTest()
         {
-            MenuRepo.ListMenu();
-            Assert.AreEqual(3, MenuRepo.ListMenu().Count);
+            Assert.AreEqual(3, MenuRepo.MenuRepo.Count);
             List<Menu> menuList = new List<Menu>()
             {
                 menu0,
                 menu1,
                 menu2
             };
-            Assert.AreEqual(menuList.Count, MenuRepo.ListMenu().Count);
+            Assert.AreEqual(menuList.Count, MenuRepo.MenuRepo.Count);
         }
     }
 }

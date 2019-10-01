@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Challenge7_Barbecue")]
+[assembly: AssemblyTitle("03_Challenge_Repository")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Challenge7_Barbecue")]
+[assembly: AssemblyProduct("03_Challenge_Repository")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fb694b1a-407a-41fa-9d0b-47672d22245a")]
+[assembly: Guid("ce7f7402-587c-42a0-a294-126ed5a44f30")]
 
 // Version information for an assembly consists of the following four values:
 //

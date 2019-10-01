@@ -8,13 +8,13 @@ namespace _01_Challenge_Repository
 {
     public class MenuRepository
     {
-        private List<Menu> MenuRepo = new List<Menu>();
+        public List<Menu> MenuRepo { get; set; } = new List<Menu>();
 
         public void AddMenu(Menu menu) => MenuRepo.Add(menu);
         public void DeleteMenu(Menu menu) => MenuRepo.Remove(menu);
-        public List<Menu> ListMenu()
+        public bool DeleteMenu(int number)
         {
-            return MenuRepo;
+            return MenuRepo.Remove(MenuRepo.Find(item => item.MealNumber == number));
         }
     }
 }
