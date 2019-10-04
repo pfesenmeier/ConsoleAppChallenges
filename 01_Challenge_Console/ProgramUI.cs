@@ -1,9 +1,5 @@
 ﻿using _01_Challenge_Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01_Challenge_Console
 {
@@ -45,10 +41,10 @@ namespace _01_Challenge_Console
             float menuPrice = float.Parse(Console.ReadLine());
             Console.WriteLine("Description: ");
             string menuDescription = Console.ReadLine();
-            Menu menu = new Menu(menuNumber, 
-                                 menuName, 
-                                 menuDescription, 
-                                 menuIngredients, 
+            Menu menu = new Menu(menuNumber,
+                                 menuName,
+                                 menuDescription,
+                                 menuIngredients,
                                  menuPrice);
             menuRepo.AddMenu(menu);
             Console.WriteLine("\nSuccess");

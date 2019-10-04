@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using _07_Challenge_Repository;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _07_Challenge_Repository;
 
 namespace _07_Challenge_Console
 {
@@ -49,9 +46,10 @@ namespace _07_Challenge_Console
                         case "4":
                             DisplayResults(repository);
                             break;
-                    } 
+                    }
                 }
             }
+
             void TreatBooth()
             {
                 while (true)
@@ -72,7 +70,7 @@ namespace _07_Challenge_Console
                         case "4":
                             DisplayResults(repository);
                             break;
-                    } 
+                    }
                 }
             }
         }

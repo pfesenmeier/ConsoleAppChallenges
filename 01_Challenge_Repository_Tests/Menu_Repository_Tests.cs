@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using _01_Challenge_Repository;
+﻿using _01_Challenge_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace _01_Challenge_Repository_Tests
 {

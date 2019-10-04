@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace _07_Challenge_Repository
 {
@@ -11,7 +7,7 @@ namespace _07_Challenge_Repository
         // Types of booths and food
         public enum Boothtype { BurgerBooth, TreatBooth }
         public enum Food { Veggieburger, Hamburger, Hotdog, Popcorn, IceCream }
-        
+
         // Constructor
         public Repository()
         {
@@ -40,12 +36,12 @@ namespace _07_Challenge_Repository
         };
 
         public Dictionary<Food, int> TicketCounter = new Dictionary<Food, int>();
-        
+
         // Methods
         public int TotalTickets()
         {
             int Total = 0;
-            foreach(var Ticket in TicketCounter)
+            foreach (var Ticket in TicketCounter)
             {
                 Total += Ticket.Value;
             }

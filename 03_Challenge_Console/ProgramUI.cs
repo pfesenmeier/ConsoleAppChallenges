@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _03_Challenge_Repository;
+﻿using _03_Challenge_Repository;
+using System;
 
 namespace _03_Challenge_Console
 {
@@ -39,11 +35,10 @@ namespace _03_Challenge_Console
             Console.WriteLine("What is the number on the badge?");
             Badge badge = new Badge(int.Parse(Console.ReadLine()));
             Console.Clear();
-
             while (true)
             {
                 Console.WriteLine("List a door that it needs access to:");
-                Doors door = (Doors)Enum.Parse(typeof(Doors),Console.ReadLine());
+                Doors door = (Doors)Enum.Parse(typeof(Doors), Console.ReadLine());
                 Badge.BadgeDictionary[badge].Add(door);
                 Console.WriteLine("Any other doors (y/n)?");
                 if (Console.ReadLine() == "n") { break; }

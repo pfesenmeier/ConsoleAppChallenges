@@ -1,13 +1,11 @@
-﻿using System;
+﻿using _03_Challenge_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using _03_Challenge_Repository;
 
 namespace _03_Challenge_Repository_Tests
 {
     [TestClass]
     public class Repository_Tests
     {
-        
         [TestMethod]
         public void AutoAddDictionaryConstructor()
         {

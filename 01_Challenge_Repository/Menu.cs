@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _01_Challenge_Repository
+﻿namespace _01_Challenge_Repository
 {
-    public class Menu                      
+    public class Menu
     {
         public Menu()
         {
@@ -25,6 +19,5 @@ namespace _01_Challenge_Repository
         public string MealDescription { get; set; }
         public string MealIngredients { get; set; }
         public float MealPrice { get; set; }
-
     }
 }

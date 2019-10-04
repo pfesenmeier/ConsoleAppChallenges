@@ -1,16 +1,14 @@
-﻿using System;
+﻿using _07_Challenge_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using _07_Challenge_Repository;
+using System;
 
 namespace _07_Challenge_UnitTests
 {
     [TestClass]
     public class Challenge_UnitTests
     {
-        
         public Repository repository = new Repository();
-            
-        
+
         [TestMethod]
         public void CheckIfEveryFoodHasAnEntryInPriceDictionary()
         {
@@ -20,6 +18,7 @@ namespace _07_Challenge_UnitTests
                 Assert.IsNotNull(repository.Prices[food]);
             }
         }
+
         [TestMethod]
         public void TotalTickets()
         {
